@@ -1,0 +1,28 @@
+/* Adicione estilos personalizados aqui, se necessário */
+.color-cell {
+  color: #fff;
+  text-align: center;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background-color: #000;
+  color: #fff;
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000;
+}

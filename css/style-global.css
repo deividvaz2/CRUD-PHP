@@ -1,0 +1,190 @@
+/* Definição de variáveis */
+:root {
+  --color-text: #000;
+  --color-background: linear-gradient(to right bottom, #8d8d8d, #f5f5f5);
+  --color-container: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.44),
+    rgba(255, 255, 255, 0.5)
+  );
+  --color-table-header: rgb(0, 0, 0);
+  --color-table-row: rgba(255, 255, 255, 0.7);
+}
+
+/* Configurações globais */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  font-size: 1.6rem;
+  place-items: center;
+  background: var(--color-background);
+  font-family: "Roboto", sans-serif;
+}
+
+/* Container principal */
+.container {
+  width: 1000px; /* Largura fixa de 1000 pixels */
+  padding: 3rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  border-radius: 3rem;
+  background: var(--color-container);
+  display: inline-block;
+
+  /* Efeito de sombra */
+  &::before {
+    content: "";
+    top: -10rem;
+    left: -10rem;
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  /* Título */
+  h1 {
+    top: 0;
+    margin: 0;
+    padding: 6rem 0;
+    padding-top: 7rem;
+    position: sticky;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 3rem;
+    box-shadow: 0 7px 2rem #c2c2c2;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+  }
+
+  /* Tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  th {
+    background-color: var(--color-table-header);
+    color: var(--color-text);
+  }
+
+  td {
+    background-color: var(--color-table-row);
+    color: var(--color-text);
+  }
+
+  /* Botões */
+  button {
+    padding: 1rem 1rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #218838;
+  }
+}
+
+.add-user {
+  position: relative;
+  background: #1f8637;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.add-user .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 13px;
+  background: #fff;
+  color: #000;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.add-user:hover .tooltip {
+  top: -55px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.add-user:hover,
+.add-user:hover .tooltip {
+  background: #1a722d;
+  color: #fff;
+}
+
+/* CSS - MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  height: 490px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

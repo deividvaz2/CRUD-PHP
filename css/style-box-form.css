@@ -1,0 +1,30 @@
+/* layout - grid */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* container secundario */
+.container-form {
+  background-color: #8d8d8d;
+  color: white;
+  padding: 20px;
+  border-radius: 3rem;
+  margin-right: 20px;
+  height: 600px;
+  margin-left: 20px;
+  width: 720px;
+  /* Ajuste conforme necessário */
+}
+
+/* Responsividade */
+@media screen and (max-width: 1200px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .box-vermelha {
+    margin: 20px auto;
+    width: 435px;
+  }
+}
